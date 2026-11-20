@@ -103,3 +103,55 @@
 	}
 
 p.small { font-size: 0.85rem; opacity: 0.75; }
+
+/* --- Sezione Software --- */
+p.lead { font-size: 1.05rem; }
+
+.pilastri { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+	.pilastro {
+		border: solid 1px rgba(255,255,255,0.3);
+		border-radius: 6px;
+		padding: 1.25rem 1.25rem 0.25rem 1.25rem;
+		background: rgba(255,255,255,0.04);
+	}
+	.pilastro-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1rem; }
+	.pilastro-head h3 { margin: 0 0 0.35rem 0; font-size: 0.85rem; line-height: 1.4; }
+	.pilastro ul { padding-left: 1rem; font-size: 0.85rem; line-height: 1.6; }
+	.pilastro ul li { padding-left: 0.25rem; margin-bottom: 0.4rem; }
+	.badge {
+		display: inline-block;
+		padding: 0.1rem 0.6rem;
+		border-radius: 2rem;
+		background: #ffffff;
+		color: #1b1f22;
+		font-size: 0.65rem;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+	}
+@media screen and (max-width: 736px) {
+	.pilastri { grid-template-columns: 1fr; }
+}
+
+/* Tessera logo: sfondo bianco per qualsiasi logo; se il file manca mostra il nome */
+.logo-tile {
+	display: flex; align-items: center; justify-content: center;
+	width: 4rem; height: 4rem; flex: none;
+	background: #ffffff; border-radius: 6px; padding: 0.55rem;
+}
+	.logo-tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+	.logo-tile b { display: none; color: #1b1f22; font-size: 0.7rem; line-height: 1.2; text-align: center; letter-spacing: 0.05rem; text-transform: uppercase; }
+	.logo-tile.nologo img { display: none; }
+	.logo-tile.nologo b { display: block; }
+
+.loghi { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 2rem; }
+	.loghi li { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0; }
+	.loghi .logo-tile { width: 100%; height: 4.5rem; }
+	.loghi small { margin-top: 0.4rem; font-size: 0.7rem; opacity: 0.75; line-height: 1.3; }
+	.loghi.clienti .logo-tile { height: 5rem; padding: 0.75rem; }
+@media screen and (max-width: 480px) {
+	.loghi { grid-template-columns: repeat(2, 1fr); }
+}
+
+#software .image.main.shot img { max-height: 20rem; }
+.pilastro-head .logo-tile b { font-size: 0.5rem; letter-spacing: 0; overflow-wrap: anywhere; }

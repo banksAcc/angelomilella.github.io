@@ -1,0 +1,105 @@
+/* Personalizzazioni del portfolio di Angelo Milella (sopra il tema Dimension) */
+
+/* Foto profilo al posto dell'icona */
+#header .logo.logo-foto {
+	width: 7rem;
+	height: 7rem;
+	overflow: hidden;
+	border-width: 2px;
+}
+	#header .logo.logo-foto img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+@media screen and (max-width: 480px) {
+	#header .logo.logo-foto { width: 5.5rem; height: 5.5rem; }
+}
+
+/* Nav a 5 voci: voci un po' più compatte */
+#header nav ul li a { min-width: 8.5rem; }
+@media screen and (max-width: 736px) {
+	#header nav ul li a { min-width: 0; }
+}
+
+/* Immagine principale: niente ritaglio aggressivo */
+#main article .image.main img { max-height: 24rem; object-fit: cover; }
+#main article .image.main.shot { text-align: center; background: rgba(255,255,255,0.04); }
+	#main article .image.main.shot img { width: auto; max-width: 100%; max-height: 26rem; margin: 0 auto; object-fit: contain; }
+
+/* Galleria progetti */
+.galleria {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.75rem;
+	margin: 0 0 1.5rem 0;
+}
+	.galleria a {
+		position: relative;
+		display: block;
+		border-bottom: 0;
+		border-radius: 4px;
+		overflow: hidden;
+		background: #fff;
+		aspect-ratio: 4 / 3;
+	}
+	.galleria img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.3s ease;
+	}
+	.galleria a:hover img { transform: scale(1.04); }
+	.galleria span {
+		position: absolute;
+		left: 0; right: 0; bottom: 0;
+		padding: 0.4rem 0.6rem;
+		font-size: 0.7rem;
+		letter-spacing: 0.05rem;
+		line-height: 1.4;
+		background: rgba(27, 31, 34, 0.82);
+		color: #fff;
+	}
+@media screen and (max-width: 480px) {
+	.galleria { grid-template-columns: 1fr; }
+}
+
+.galleria img.top { object-position: center 70%; }
+
+/* Macro aree */
+.aree { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+	.aree section {
+		border-left: solid 2px rgba(255,255,255,0.5);
+		padding-left: 1rem;
+	}
+	.aree h4 { margin-bottom: 0.4rem; }
+	.aree p { margin: 0; }
+
+/* Percorso */
+.timeline { list-style: none; padding: 0; }
+	.timeline li {
+		display: flex;
+		gap: 1rem;
+		padding: 0.45rem 0;
+		border-top: solid 1px rgba(255,255,255,0.15);
+	}
+	.timeline li:first-child { border-top: 0; }
+	.timeline .when { flex: 0 0 6.5rem; opacity: 0.7; font-size: 0.85rem; }
+@media screen and (max-width: 480px) {
+	.timeline li { flex-direction: column; gap: 0; }
+	.timeline .when { flex: none; }
+}
+
+/* Tag competenze */
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+	.tags li {
+		padding: 0.2rem 0.75rem;
+		border: solid 1px rgba(255,255,255,0.4);
+		border-radius: 2rem;
+		font-size: 0.8rem;
+	}
+
+p.small { font-size: 0.85rem; opacity: 0.75; }
